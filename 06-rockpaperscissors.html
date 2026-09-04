@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <button onclick="
+        const randomNumber = Math.random();
+        
+        if (randomNumber > 0 && randomNumber < 1/3){
+            console.log('computer picked rock. So it is a tie');
+            alert('computer picked rock. So it is a tie');
+        }
+        else if (randomNumber >= 1/3 && randomNumber < 2/3){
+            console.log('computer picked paper so you lose');
+            alert('computer picked paper so you lose');
+        }
+        else {
+            console.log('computer picked scissors so you win!');
+            alert('computer picked scissors so you win!');
+        }
+        ">Rock</button>
+        <button onclick="
+        const randomNumber = Math.random();
+        
+        if (randomNumber > 0 && randomNumber < 1/3){
+            console.log('computer picked rock so you win!');
+            alert('computer picked rock so you win!');
+        }
+        else if (randomNumber >= 1/3 && randomNumber < 2/3){
+            console.log('computer picked paper so it is a tie');
+            alert('computer picked paper so it is a tie');
+        }
+        else {
+            console.log('computer picked scissors so you lose!');
+            alert('computer picked scissors so you lose!');
+        }
+        ">Paper</button> 
+        <button onclick="
+        const randomNumber = Math.random();
+    
+        if (randomNumber > 0 && randomNumber < 1/3){
+            console.log('computer picked rock so you lose!');
+            alert('computer picked rock so you lose!');
+        }
+        else if (randomNumber >= 1/3 && randomNumber < 2/3){
+            console.log('computer picked paper so it is a tie');
+            alert('computer picked paper so it is a tie');
+        }
+        else {
+            console.log('computer picked scissors so it is a tie!');
+            alert('computer picked scissors so it is a tie!');
+        }
+        ">Scissors</button>
+        <script>
+
+        </script>
+    </body>
+</html>

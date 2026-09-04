@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <button onclick="
+        result('rock');
+        ">rock</button>
+    <button onclick="
+        result('paper');
+        ">paper</button>
+    <button onclick="
+        result('scissor');
+        ">scissors</button>
+
+    <script>
+        function pickComputerMove() {
+            let randomNumber = Math.random();
+
+            if (randomNumber > 0 && randomNumber < 1 / 3) {
+                computerMove = 'rock';
+            }
+            else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+                computerMove = 'paper';
+            }
+            else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+                computerMove = 'scissors';
+            }
+
+            return computerMove;
+        }
+
+        function result(userMove) {
+            const computerMove = pickComputerMove();
+            if (userMove === 'rock') {
+                if (computerMove === 'rock') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So draw.`);
+                }
+                else if (computerMove === 'paper') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So lose.`);
+                }
+                else if (computerMove === 'scissors') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So win.`);
+                }
+            }
+            else if (userMove === 'paper') {
+                if (computerMove === 'rock') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So you win.`);
+                }
+                else if (computerMove === 'paper') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So it is a draw.`);
+                }
+                else if (computerMove === 'scissors') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So you lose.`);
+                }
+            }
+            else if (userMove === 'scissor') {
+                if (computerMove === 'rock') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So you lose.`);
+                }
+                else if (computerMove === 'paper') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So you win.`);
+                }
+                else if (computerMove === 'scissors') {
+                    alert(`You picked ${userMove}. Computer picked ${computerMove}. So it is a draw.`);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

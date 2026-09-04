@@ -1,34 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Cart Quantity</title>
+    </head>
+    <body>
+        <h1>Cart Quantity</h1>
+        <button onclick="console.log(`Cart Quantity = ${result}`);">Show Quantity</button>
+        <button onclick="result = result+1;">Add to Cart</button>
+        <button onclick="result = result+2;">+2</button>
+        <button onclick="result += 3;">+3</button>
+        <button onclick="result = 0;
+            console.log(`Cart Quantity = ${result}`);"
+        >Reset Cart</button>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Quantity</title>
-    <style>
+        <script>
+            let result = 0;
 
-    </style>
-</head>
-
-<body>
-    <button onclick="
-        console.log(`cart quantity : ${CartQuantity}`)">Show Cart</button>
-    <button onclick="
-    console.log(`cart quantity : ${CartQuantity = CartQuantity+1}`)">Add to Cart</button>
-    <button onclick="
-    console.log(`cart quantity : ${CartQuantity = CartQuantity+2}`)">+2</button>
-    <button onclick="
-    console.log(`cart quantity : ${CartQuantity = CartQuantity+3}`)">+3</button>
-    <button 
-    onclick="
-    console.log(`cart quantity : ${CartQuantity = 0}`)
-    console.log('cart reset')">Reset Cart</button>
-
-    <script>
-        let CartQuantity = 0;
-
-
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
