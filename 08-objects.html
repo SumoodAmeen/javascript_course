@@ -22,6 +22,22 @@
         delete product.newProperty;
         console.log(product);
 
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']:'1 day',
+            rating: {star: 4.5, count:9},
+            fun: function function1(){
+                console.log('this is function inside an object');
+            }
+        }
+        console.log(product2);
+        console.log(product2['name']);
+        console.log(product2.rating);
+        console.log(product2.rating.star);
+        product2.fun();
+
+
+
     </script>
 </body>
 
