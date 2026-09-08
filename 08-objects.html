@@ -13,6 +13,8 @@
         console.log(product.name);
         console.log(product.price);
 
+        console.log(localStorage.getItem('message'));
+
         product.name = 'cotton socks';
         console.log(product.name);
 
@@ -36,6 +38,21 @@
         console.log(product2.rating.star);
         product2.fun();
 
+        console.log(JSON.stringify(product2));
+
+        const JSONString = JSON.stringify(product2);
+
+        console.log(JSON.parse(JSONString));
+
+
+        function localStorageTest(){
+            console.log('This is a sample string');
+
+            localStorage.setItem('message', 'hello');
+        }
+
+
+        localStorageTest();
 
 
     </script>

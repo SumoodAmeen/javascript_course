@@ -24,7 +24,7 @@
 
     <script>
 
-        const score = {wins: 0, loses: 0, ties: 0};
+        const score = JSON.parse(localStorage.getItem('score'));
 
         function pickComputerMove() {
             let randomNumber = Math.random();
@@ -90,8 +90,10 @@
                 score.ties +=1;
             }
 
+            localStorage.setItem('score', JSON.stringify(score));
+
             alert(`Computer picked ${computerMove}. User picked ${userMove}. So it is a ${result1}, 
-            Wins : ${score.wins}, Loses : ${score.loses}, Ties : ${score.ties}`);
+Wins : ${score.wins}, Loses : ${score.loses}, Ties : ${score.ties}`);
 
         }
     </script>
