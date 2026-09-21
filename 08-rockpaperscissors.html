@@ -20,11 +20,21 @@
         score.wins = 0;
         score.loses = 0;
         score.ties = 0;
+        localStorage.removeItem('score');
         ">Reset</button>
 
     <script>
 
-        const score = JSON.parse(localStorage.getItem('score'));
+        let score = JSON.parse(localStorage.getItem('score')) || {wins : 0, loses : 0, ties : 0};
+        
+        
+        /*if (score === null){
+            score = {
+                wins:0,
+                loses:0,
+                ties:0
+            }
+        }*/
 
         function pickComputerMove() {
             let randomNumber = Math.random();
