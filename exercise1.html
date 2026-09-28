@@ -1,29 +1,139 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Exercise</title>
-        <style>
-            button {
+
+<head>
+    <title>Exercise</title>
+    <style>
+        /*button {
                 background-color: red;
                 padding: 5px;
                 border-radius: 5px;
                 border: none;
-            }
-        </style>
-    </head>
-    <body>
-        <p onclick="
+            }*/
+    </style>
+</head>
+
+<body>
+    <!-- <p onclick="
             alert('sumood is gratest!');">Paragraph</p>
         <button title="hi sumood">Button</button>
-        <p>here <button>is nested</button>element</p>
+        <p>here <button>is nested</button>element</p> -->
 
-        <script>
-            alert('hey guys!');
-            let variable = 5;
-            console.log(variable);
-            variable = 6;
-            console.log(variable);
+    <h1>Rock Paper Scissors</h1>
+    <button onclick="
 
-        </script>
-    </body>
+            const computerMove = pickComputerMove();
+
+            let result = '';
+
+            if(computerMove === 'rock'){
+                result = 'tie';
+            }
+            else if(computerMove === 'paper'){
+                result = 'lose';
+            }
+            else if(computerMove === 'scissor'){
+                result = 'win';
+            }
+
+            console.log(result);
+            alert(`You picked rock. Computer picked ${computerMove}. So ${result}`);
+        ">Rock</button>
+    <button onclick="
+
+            const computerMove = pickComputerMove();
+    
+            let result = '';
+
+            if(computerMove === 'rock'){
+                result = 'win';
+            }
+            else if(computerMove === 'paper'){
+                result = 'tie';
+            }
+            else if(computerMove === 'scissor'){
+                result = 'lose';
+            }
+
+            console.log(result);
+            alert(`You picked paper. Computer picked ${computerMove}. So ${result}`);
+            ">Paper</button>
+    <button onclick="
+            const computerMove = pickComputerMove();
+            let result = '';
+
+            if(computerMove === 'rock'){
+                result = 'lose';
+            }
+            else if(computerMove === 'paper'){
+                result = 'win';
+            }
+            else if(computerMove === 'scissor'){
+                result = 'tie';
+            }
+
+            console.log(result);
+            alert(`You picked scissor. Computer picked ${computerMove}. So ${result}`);
+            ">Scissor</button> 
+
+
+
+
+    <script>
+        /*alert('hey guys!');
+        let variable = 5;
+        console.log(variable);
+        variable = 6;
+        console.log(variable);
+
+
+        let variable1 = 4;
+        let variable2 = variable1+5;
+
+        let variable3 = 'sumood ameen';
+
+        console.log(variable1);
+        console.log(variable2);
+        console.log(variable3);
+
+        console.log(variable2/2);
+
+        console.log(3>5);
+        console.log(8>5);
+        console.log('5'===5);
+        console.log('5'==5);
+
+        const result = 8>5 ? 'if' : 'else';
+        console.log(result);
+
+        const result1 = 0 && 1;
+        console.log(result1);
+
+        const result2 = 0 || 1;
+        console.log(result2);*/
+
+
+        function pickComputerMove(){
+            let computerMove = '';
+            const randomNumber = Math.random();
+
+            if(randomNumber >= 0 && randomNumber < 1/3){
+                computerMove = 'rock';
+            }
+            else if(randomNumber >= 1/3 && randomNumber < 2/3){
+                computerMove = 'paper';
+            }
+            else if(randomNumber >= 2/3 && randomNumber < 1){
+                computerMove = 'scissor';
+            }
+            console.log(computerMove);
+
+            return computerMove;
+        }
+
+
+
+    </script>
+</body>
+
 </html>
