@@ -21,63 +21,14 @@
 
     <h1>Rock Paper Scissors</h1>
     <button onclick="
-
-            const computerMove = pickComputerMove();
-
-            let result = '';
-
-            if(computerMove === 'rock'){
-                result = 'tie';
-            }
-            else if(computerMove === 'paper'){
-                result = 'lose';
-            }
-            else if(computerMove === 'scissor'){
-                result = 'win';
-            }
-
-            console.log(result);
-            alert(`You picked rock. Computer picked ${computerMove}. So ${result}`);
+            pickUserMove('rock');
         ">Rock</button>
     <button onclick="
-
-            const computerMove = pickComputerMove();
-    
-            let result = '';
-
-            if(computerMove === 'rock'){
-                result = 'win';
-            }
-            else if(computerMove === 'paper'){
-                result = 'tie';
-            }
-            else if(computerMove === 'scissor'){
-                result = 'lose';
-            }
-
-            console.log(result);
-            alert(`You picked paper. Computer picked ${computerMove}. So ${result}`);
+            pickUserMove('paper');
             ">Paper</button>
     <button onclick="
-            const computerMove = pickComputerMove();
-            let result = '';
-
-            if(computerMove === 'rock'){
-                result = 'lose';
-            }
-            else if(computerMove === 'paper'){
-                result = 'win';
-            }
-            else if(computerMove === 'scissor'){
-                result = 'tie';
-            }
-
-            console.log(result);
-            alert(`You picked scissor. Computer picked ${computerMove}. So ${result}`);
-            ">Scissor</button> 
-
-
-
+            pickUserMove('scissor');
+            ">Scissor</button>
 
     <script>
         /*alert('hey guys!');
@@ -112,6 +63,12 @@
         const result2 = 0 || 1;
         console.log(result2);*/
 
+        const score = {
+            wins : 0,
+            loses : 0,
+            ties : 0
+        }
+
 
         function pickComputerMove(){
             let computerMove = '';
@@ -130,6 +87,81 @@
 
             return computerMove;
         }
+
+        function pickUserMove(userMove){
+            let computerMove = pickComputerMove();
+            let result = '';
+            if (userMove === 'rock'){
+                if(computerMove === 'rock'){
+                result = 'tie';
+            }
+            else if(computerMove === 'paper'){
+                result = 'lose';
+            }
+            else if(computerMove === 'scissor'){
+                result = 'win';
+            }
+            }
+            else if(userMove === 'paper'){
+                if(computerMove === 'rock'){
+                result = 'win';
+            }
+            else if(computerMove === 'paper'){
+                result = 'tie';
+            }
+            else if(computerMove === 'scissor'){
+                result = 'lose';
+            }
+            }
+            else if(userMove === 'scissor'){
+                if(computerMove === 'rock'){
+                result = 'lose';
+            }
+            else if(computerMove === 'paper'){
+                result = 'win';
+            }
+            else if(computerMove === 'scissor'){
+                result = 'tie';
+            }
+            }
+
+            if (result === 'win'){
+                score.wins += 1;
+            }
+            else if (result === 'lose'){
+                score.loses += 1;
+            }
+            else if (result === 'tie'){
+                score.ties += 1;
+            }
+
+            return alert(`You picked ${userMove}. Computer picked ${computerMove}. So it is a ${result}.
+            Wins : ${score.wins}, Loses : ${score.loses}, Ties : ${score.ties}.`);
+        }
+
+        /*const obj = {
+            name : 'Ameen',
+            age : 24
+        }
+
+        console.log(obj);
+        console.log(obj.name);
+
+        obj.name = 'Ijas';
+        console.log(obj);
+
+        delete obj.age;
+
+        console.log(obj);
+
+        const func = {
+            funct : function ameen(){
+                console.log('ameen');
+            },
+            roll : 47
+        }
+
+        func.funct();*/
 
 
 
