@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Amazon</title>
+</head>
+
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = +$10 shipping</p>
+    <p>Order above $40 = FREE shipping</p>
+
+    <input class="js-value" placeholder="enter the cost">
+    <button onclick="scoreCalculator();">calculate</button>
+    <p class="js-total"></p>
+
+    <script>
+        
+
+        function scoreCalculator() {
+            let inputElement = document.querySelector('.js-value');
+            console.log(inputElement);
+
+            console.log(inputElement.value);
+            let cost = JSON.parse(inputElement.value);
+            if (cost < 40) {
+                cost = cost+10;
+            }
+
+            document.querySelector('.js-total').innerHTML = `${cost}`;
+
+            
+        }
+    </script>
+</body>
+
+</html>
