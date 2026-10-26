@@ -10,7 +10,10 @@
     <p>Order under $40 = +$10 shipping</p>
     <p>Order above $40 = FREE shipping</p>
 
-    <input class="js-value" placeholder="enter the cost">
+    <input class="js-value" placeholder="enter the cost" onkeydown="
+    keyData(event.key);
+    console.log(event);
+    ">
     <button onclick="scoreCalculator();">calculate</button>
     <p class="js-total"></p>
 
@@ -22,14 +25,20 @@
             console.log(inputElement);
 
             console.log(inputElement.value);
-            let cost = JSON.parse(inputElement.value);
+            let cost = Number(inputElement.value);
             if (cost < 40) {
                 cost = cost+10;
             }
 
-            document.querySelector('.js-total').innerHTML = `${cost}`;
+            document.querySelector('.js-total').innerHTML = `$${cost}`;
 
             
+        }
+
+        function keyData(press) {
+            if (press === 'Enter') {
+                scoreCalculator();
+            }
         }
     </script>
 </body>
